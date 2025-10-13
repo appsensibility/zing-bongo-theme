@@ -16,6 +16,7 @@
   function closeMenu() {
     panel.classList.remove('is-open');
     backdrop.classList.remove('is-open');
+    panel.querySelectorAll('.submenu-open').forEach(function (el) { el.classList.remove('submenu-open'); });
     setTimeout(function(){ backdrop.hidden = true; }, 240);
     document.body.classList.remove('lsm-locked');
     openBtn.setAttribute('aria-expanded', 'false');

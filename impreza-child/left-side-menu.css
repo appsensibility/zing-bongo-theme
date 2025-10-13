@@ -33,6 +33,12 @@
 }
 
 .lsm-panel.is-open { transform: translateX(0); }
+.lsm-panel:not(.is-open) .lsm-menu ul {
+  transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 #lsm-close {
   position: absolute;
