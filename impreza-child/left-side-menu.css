@@ -28,7 +28,7 @@
   z-index: 10000;
   transform: translateX(-100%);
   transition: transform var(--lsm-speed) ease;
-  overflow: hidden;
+  overflow: visible;
   border-right: 1px solid var(--lsm-border);
 }
 
@@ -88,6 +88,7 @@ body.lsm-locked { overflow: hidden; }
 
 .lsm-menu li { position: relative; }
 
+/*
 .lsm-menu ul {
   position: absolute;
   top: 0;
@@ -100,6 +101,20 @@ body.lsm-locked { overflow: hidden; }
   opacity: 0;
   pointer-events: none;
   transition: transform var(--lsm-speed) ease, opacity var(--lsm-speed) ease;
+}*/
+.lsm-menu ul {
+  position: fixed;
+  top: 0;
+  left: var(--lsm-w);
+  width: var(--lsm-w);
+  height: 100vh;
+  background: var(--lsm-bg-2);
+  border-left: 1px solid var(--lsm-border);
+  transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--lsm-speed) ease, opacity var(--lsm-speed) ease;
+  z-index: 10002;
 }
 
 .lsm-menu li.submenu-open > ul {
@@ -132,6 +147,9 @@ body.lsm-locked { overflow: hidden; }
 .lsm-btn:focus { outline: 2px solid currentColor; outline-offset: 2px; }
 .screen-reader-text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
+/* columns for deeper levels */
+.lsm-menu ul ul { left: calc(var(--lsm-w) * 2); }
+.lsm-menu ul ul ul { left: calc(var(--lsm-w) * 3); }
 
 @media (max-width: 380px) {
   :root { --lsm-w: 86vw; }

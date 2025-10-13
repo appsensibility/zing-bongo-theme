@@ -3,7 +3,7 @@
   var closeBtn = document.getElementById('lsm-close');
   var panel = document.getElementById('lsm-panel');
   var backdrop = document.getElementById('lsm-backdrop');
-  if (!openBtn || !closeBtn || !panel || !backdrop) return;
+  if (!openBtn || !panel || !backdrop) return;
 
   function openMenu() {
     panel.classList.add('is-open');
@@ -22,11 +22,12 @@
     panel.setAttribute('aria-hidden', 'true');
   }
 
-  openBtn.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
-  backdrop.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+  if (openBtn) openBtn.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+  if (document) document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
 
+  /*
   panel.addEventListener('click', function(e) {
     var link = e.target.closest('a');
     if (!link) return;
@@ -34,5 +35,25 @@
     if (!li.classList.contains('menu-item-has-children')) return;
     e.preventDefault();
     li.classList.toggle('submenu-open');
-  });
+  });*/
+    panel.addEventListener('click', function (e) {
+        console.log("Nav Menu Click", e);
+        var link = e.target.closest('a');
+        if (!link) return;
+
+        console.log("Nav Menu Click", e);
+
+        var li = link.parentElement;
+
+        if (!li.classList.contains('menu-item-has-children')) return;
+
+        e.preventDefault();
+
+        // close siblings at this level
+        var siblings = Array.prototype.filter.call(li.parentElement.children, function (n) { return n !== li; });
+        siblings.forEach(function (s) { s.classList.remove('submenu-open'); });
+
+        // toggle current
+        li.classList.toggle('submenu-open');
+    });
 })();

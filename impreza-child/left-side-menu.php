@@ -12,7 +12,6 @@ $menu_html = wp_nav_menu([
 <!--button id="lsm-open" aria-haspopup="true" aria-controls="lsm-panel" aria-expanded="false">Menu</button-->
 
 <aside id="lsm-panel" class="lsm-panel" aria-hidden="true">
-  <button id="lsm-close" aria-label="Close menu">✕</button>
   <?php echo $menu_html; ?>
 </aside>
 <div id="lsm-backdrop" class="lsm-backdrop" hidden></div>
