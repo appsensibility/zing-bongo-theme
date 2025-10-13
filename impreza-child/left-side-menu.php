@@ -9,7 +9,7 @@ $menu_html = wp_nav_menu([
   'fallback_cb'     => false,
 ]);
 ?>
-<button id="lsm-open" aria-haspopup="true" aria-controls="lsm-panel" aria-expanded="false">Menu</button>
+<!--button id="lsm-open" aria-haspopup="true" aria-controls="lsm-panel" aria-expanded="false">Menu</button-->
 
 <aside id="lsm-panel" class="lsm-panel" aria-hidden="true">
   <button id="lsm-close" aria-label="Close menu">✕</button>
