@@ -1,5 +1,6 @@
 :root {
-  --lsm-w: 320px;
+  /*--lsm-w: 320px;*/
+  --lsm-w: 420px;
   --lsm-bg: #0f0f10;
   --lsm-bg-2: #151517;
   --lsm-fg: #fff;
@@ -64,6 +65,23 @@
 .lsm-backdrop.is-open { opacity: 1; }
 
 body.lsm-locked { overflow: hidden; }
+
+.lsm-nav-logo-container {
+    /* try to animate the logo when the nav menu opens - this is too complicated
+    min-height: 130px; */
+    padding: 20px;
+}
+
+.lsm-nav-logo {
+  max-height: 105px;
+}
+
+/* try to animate the logo when the nav menu opens - this is too complicated
+#lsm-panel:not(.is-open) .lsm-nav-logo-container .lsm-nav-logo {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+} */
 
 .lsm-nav { display: block; height: 100%; }
 
@@ -131,6 +149,39 @@ body.lsm-locked { overflow: hidden; }
 
 .lsm-menu ul li a { color: var(--lsm-fg-dim); }
 .lsm-menu ul li a:hover { color: var(--lsm-fg); }
+
+.lsm-menu li.zng-large-menu-item a {
+    font-family: var(--h1-font-family,inherit);
+    font-size: 32px;
+    font-weight: 400;
+    /*color: var(--color-header-middle-text-hover);*/
+}
+/*.lsm-menu li.zng-large-menu-item a:hover {
+    color: var(--color-content-link-hover)
+}*/
+
+.lsm-menu ul.sub-menu {
+    padding-top: 152px;
+}
+
+ul.lsm-menu li ul {
+    background-image: url('https://development-website.online/wp-content/themes/impreza-child/assets/Bongo-Jct-box_angle-nav-bg-crop.webp');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+ul.lsm-menu li:nth-child(1) ul {
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Bongo-Jct-box_angle-nav-bg-crop.webp');
+}
+
+ul.lsm-menu li:nth-child(2) ul {
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Elevator-Guide.webp');
+}
+
+ul.lsm-menu  li:nth-child(3) ul {
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/upgrading-elevator.webp');
+}
 
 .lsm-menu li > a:focus,
 .lsm-menu li > a:hover { background: rgba(255,255,255,.06); }

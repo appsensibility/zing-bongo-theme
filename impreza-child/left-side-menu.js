@@ -3,6 +3,7 @@
   var closeBtn = document.getElementById('lsm-close');
   var panel = document.getElementById('lsm-panel');
   var backdrop = document.getElementById('lsm-backdrop');
+  var mainLogo = document.getElementById('zng-main-logo');
   if (!openBtn || !panel || !backdrop) return;
 
   function openMenu() {
@@ -12,6 +13,7 @@
     document.body.classList.add('lsm-locked');
     openBtn.setAttribute('aria-expanded', 'true');
     panel.setAttribute('aria-hidden', 'false');
+    if(mainLogo) mainLogo.classList.add('is-open');
   }
   function closeMenu() {
     panel.classList.remove('is-open');
@@ -21,6 +23,7 @@
     document.body.classList.remove('lsm-locked');
     openBtn.setAttribute('aria-expanded', 'false');
     panel.setAttribute('aria-hidden', 'true');
+    if(mainLogo) mainLogo.classList.remove('is-open');
   }
 
   if (openBtn) openBtn.addEventListener('click', openMenu);
