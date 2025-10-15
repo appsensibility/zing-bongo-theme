@@ -160,6 +160,17 @@ body.lsm-locked { overflow: hidden; }
     color: var(--color-content-link-hover)
 }*/
 
+.lsm-menu li.zng-medium-menu-item a {
+    font-family: var(--h1-font-family,inherit);
+    font-size: 24px;
+    font-weight: 400;
+    /*color: var(--color-header-middle-text-hover);*/
+}
+
+.lsm-menu li.zng-large-menu-item ul a {
+  font-size: 28px;
+}
+
 .lsm-menu ul.sub-menu {
     padding-top: 152px;
 }
@@ -172,15 +183,15 @@ ul.lsm-menu li ul {
 }
 
 ul.lsm-menu li:nth-child(1) ul {
-    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Bongo-Jct-box_angle-nav-bg-crop.webp');
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Bongo-Jct-box_angle-nav-bg-fade2-dark1.webp');
 }
 
 ul.lsm-menu li:nth-child(2) ul {
-    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Elevator-Guide.webp');
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/Elevator-Phone-blog-fade2-dark1.webp');
 }
 
 ul.lsm-menu  li:nth-child(3) ul {
-    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/upgrading-elevator.webp');
+    background-image:url('https://development-website.online/wp-content/themes/impreza-child/assets/upgrading-elevator-fade2-dark1.webp');
 }
 
 .lsm-menu li > a:focus,
