@@ -148,7 +148,10 @@ body.lsm-locked { overflow: hidden; }
   pointer-events: auto;
 }
 
-.lsm-menu ul li a { color: var(--lsm-fg-dim); }
+.lsm-menu ul li a { 
+  /*color: var(--lsm-fg-dim);*/
+   color: var(--lsm-fg);
+}
 .lsm-menu ul li a:hover { color: var(--lsm-fg); }
 
 .lsm-menu li.zng-large-menu-item a {
@@ -226,3 +229,90 @@ ul.lsm-menu  li:nth-child(3) ul {
   :root { --lsm-w: 86vw; }
 }
 
+@media (max-width: 1024px) {
+  .lsm-panel {
+    width: 100vw;
+    overflow: auto;
+  }
+
+  /* Turn flyout columns into stacked dropdowns */
+  .lsm-menu ul {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    border-left: 0;
+    border-top: 1px solid var(--lsm-border);
+    background: var(--lsm-bg-2);
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--lsm-speed) ease;
+    z-index: auto;
+  }
+
+  /* Open state for dropdown */
+  .lsm-menu li.submenu-open > ul {
+    max-height: 1000px; /* large enough to reveal contents */
+  }
+
+  /* Remove multi-column offsets for deeper levels */
+  .lsm-menu ul ul,
+  .lsm-menu ul ul ul {
+    left: 0;
+  }
+
+  /* Swap the caret and rotate when open */
+  .lsm-menu .menu-item-has-children > a::after {
+    content: "▾";
+    float: right;
+    transition: transform var(--lsm-speed) ease;
+  }
+  .lsm-menu li.submenu-open > a::after {
+    transform: rotate(180deg);
+  }
+
+  /* Optional: a bit tighter padding on small screens */
+  .lsm-menu a { padding: .8rem 1rem; }
+
+  ul.lsm-menu li:nth-child(1) ul, ul.lsm-menu li:nth-child(2) ul, ul.lsm-menu li:nth-child(3) ul {
+    background: none;
+  }
+
+  .lsm-menu ul.sub-menu {
+    padding-top: 0;
+  }
+
+/* make the container take the row and align left */
+#lsm-panel .lsm-nav-logo-container {
+  width: 100%;
+  display: block !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* force the image to hug the left edge */
+#lsm-panel .lsm-nav-logo {
+  display: block !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+  max-width: 240px;
+}
+
+/* kill common centering on ancestors inside the panel */
+#lsm-panel .align_center,
+#lsm-panel [class*="align_"],
+#lsm-panel [style*="text-align:center"] {
+  text-align: left !important;
+}
+
+#lsm-panel .lsm-nav-logo-container { display: flex !important; justify-content: flex-start !important; }
+#lsm-panel .lsm-nav-logo { align-self: flex-start !important; }
+}
