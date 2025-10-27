@@ -4,8 +4,17 @@
  */
 
 add_action('wp_enqueue_scripts', function () {
-  wp_enqueue_style('lsm-css', get_stylesheet_directory_uri() . '/left-side-menu.css', [], '1.0');
-  wp_enqueue_script('lsm-js', get_stylesheet_directory_uri() . '/left-side-menu.js', [], '1.0', true);
+  $dir  = get_stylesheet_directory();
+  $uri  = get_stylesheet_directory_uri();
+
+  $css_rel = '/left-side-menu.css';
+  $js_rel  = '/left-side-menu.js';
+
+  $css_ver = file_exists($dir.$css_rel) ? filemtime($dir.$css_rel) : null;
+  $js_ver  = file_exists($dir.$js_rel) ? filemtime($dir.$js_rel) : null;
+
+  wp_enqueue_style('lsm-css', $uri.$css_rel, [], $css_ver);
+  wp_enqueue_script('lsm-js', $uri.$js_rel, [], $js_ver, true);
 });
 
 add_action('after_setup_theme', function () {
