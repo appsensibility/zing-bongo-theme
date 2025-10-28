@@ -77,6 +77,10 @@ body.lsm-locked { overflow: hidden; }
   /* max-height: 105px; */
 }
 
+#lsm-panel .lsm-nav-logo {
+  max-width: 240px;
+}
+
 /* try to animate the logo when the nav menu opens - this is too complicated
 #lsm-panel:not(.is-open) .lsm-nav-logo-container .lsm-nav-logo {
     position: absolute;
@@ -286,33 +290,33 @@ ul.lsm-menu  li:nth-child(3) ul {
     padding-top: 0;
   }
 
-/* make the container take the row and align left */
-#lsm-panel .lsm-nav-logo-container {
-  width: 100%;
-  display: block !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
+  /* make the container take the row and align left */
+  #lsm-panel .lsm-nav-logo-container {
+    width: 100%;
+    display: block !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
 
-/* force the image to hug the left edge */
-#lsm-panel .lsm-nav-logo {
-  display: block !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-  width: auto !important;
-  max-width: 100%;
-  object-fit: contain;
-  max-width: 240px;
-}
+  /* force the image to hug the left edge */
+  #lsm-panel .lsm-nav-logo {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+    max-width: 240px;
+  }
 
-/* kill common centering on ancestors inside the panel */
-#lsm-panel .align_center,
-#lsm-panel [class*="align_"],
-#lsm-panel [style*="text-align:center"] {
-  text-align: left !important;
-}
+  /* kill common centering on ancestors inside the panel */
+  #lsm-panel .align_center,
+  #lsm-panel [class*="align_"],
+  #lsm-panel [style*="text-align:center"] {
+    text-align: left !important;
+  }
 
-#lsm-panel .lsm-nav-logo-container { display: flex !important; justify-content: flex-start !important; }
-#lsm-panel .lsm-nav-logo { align-self: flex-start !important; }
+  #lsm-panel .lsm-nav-logo-container { display: flex !important; justify-content: flex-start !important; }
+  #lsm-panel .lsm-nav-logo { align-self: flex-start !important; }
 }
