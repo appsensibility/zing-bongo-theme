@@ -156,7 +156,7 @@ body.lsm-locked { overflow: hidden; }
   /*color: var(--lsm-fg-dim);*/
    color: var(--lsm-fg);
 }
-.lsm-menu ul li a:hover { color: var(--lsm-fg); }
+.lsm-menu ul li a:hover { color: var(--color-header-middle-text-hover) !important; }
 
 .lsm-menu li.zng-large-menu-item a {
     font-family: var(--h1-font-family,inherit);
@@ -165,15 +165,19 @@ body.lsm-locked { overflow: hidden; }
     font-weight: 400;
     /*color: var(--color-header-middle-text-hover);*/
 }
-/*.lsm-menu li.zng-large-menu-item a:hover {
-    color: var(--color-content-link-hover)
-}*/
+.lsm-menu li.zng-large-menu-item a:hover {
+    color: var(--color-header-middle-text-hover) !important;
+}
 
 .lsm-menu li.zng-medium-menu-item a {
     font-family: var(--h1-font-family,inherit);
     font-size: 24px;
     font-weight: 400;
     /*color: var(--color-header-middle-text-hover);*/
+}
+
+.lsm-menu li.zng-medium-menu-item a:hover {
+  color: var(--color-header-middle-text-hover) !important;
 }
 
 .lsm-menu li.zng-large-menu-item ul a {
