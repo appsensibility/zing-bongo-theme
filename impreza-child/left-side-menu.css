@@ -324,3 +324,13 @@ ul.lsm-menu  li:nth-child(3) ul {
   #lsm-panel .lsm-nav-logo-container { display: flex !important; justify-content: flex-start !important; }
   #lsm-panel .lsm-nav-logo { align-self: flex-start !important; }
 }
+
+/* Fix the bug in safari browser whch majkes the mouse cursor change to text cursor when you hover over the textual portions of the logo inmage*/
+#zng-main-logo img {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#zng-main-logo {
+  cursor: pointer;
+}
